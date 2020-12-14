@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useEffect, useState} from 'react'
+import React, {ChangeEvent, useState} from 'react'
 import {todolistAPI, TodoListType} from "../API/todolist-api";
 
 
@@ -129,7 +129,7 @@ export const DeleteTodolistTasks = () => {
     const onChangeTaskId = (e: ChangeEvent<HTMLInputElement>) => {
         setTaskId(e.currentTarget.value)
     }
-    const DeleteTodo = () => todolistAPI.DeleteTodolistTasks(todolistId,taskId).then((res) => {
+    const DeleteTodo = () => todolistAPI.DeleteTodolistTasks(todolistId, taskId).then((res) => {
         setState(res.data);
     })
 
@@ -139,5 +139,43 @@ export const DeleteTodolistTasks = () => {
         <button onClick={DeleteTodo}>Delete Todo</button>
         TODOLIST_ID<input value={todolistId} onChange={onChangeTodolistId}/>
         <>TASK_ID<input value={taskId} onChange={onChangeTaskId}/></>
+    </>
+}
+export const UpdateTaskTitle = () => {
+    const [state, setState] = useState<any>(null)
+    const [title, setTitle] = useState<string>("")
+    const onChangeTodolistTitle = (e: ChangeEvent<HTMLInputElement>) => {
+        setTitle(e.currentTarget.value)
+    }
+    const [todolistId, setTodolistId] = useState<string>("6d780f66-25c6-45e9-b603-606016195c54")
+    const onChangeTodolistId = (e: ChangeEvent<HTMLInputElement>) => {
+        setTodolistId(e.currentTarget.value)
+    }
+    const [taskId, setTaskId] = useState<string>("3f339ffb-aa37-4872-a7d2-a78a3cf3aa53")
+    const onChangeTaskId = (e: ChangeEvent<HTMLInputElement>) => {
+        setTaskId(e.currentTarget.value)
+    }
+    let newTask = {
+        title: title,
+        description: "",
+        completed: false,
+        status: 0,
+        priority: 0,
+        startDate: "2020-12-14T06:29:43.143",
+        deadline: "2020-12-14T06:29:43.143"
+    }
+
+    const ChangeTitle = () => todolistAPI.updateTaskTitle(todolistId, taskId, newTask)
+        .then((res) => {
+            setState(res.data)
+        })
+
+
+    return <>
+        <div> {JSON.stringify(state)}</div>
+        <button onClick={ChangeTitle}>UPDATE TITLE</button>
+        <div> TITLE<input value={title} onChange={onChangeTodolistTitle}/></div>
+        <div> TODOLIST_ID<input value={todolistId} onChange={onChangeTodolistId}/></div>
+        <div>TASK_ID<input value={taskId} onChange={onChangeTaskId}/></div>
     </>
 }
