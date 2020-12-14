@@ -20,7 +20,7 @@ export const GetTodolists = () => {
             return <div>{td.order} ---------------- {td.id}</div>
         })
         }
-        <button onClick={getTodo}>GET TODO</button>
+        <button onClick={getTodo}>GET TODOs</button>
     </>
 }
 export const CreateTodolist = () => {
