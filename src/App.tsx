@@ -5,7 +5,7 @@ import {v1} from 'uuid'
 import {AddItemForm} from './AddItemForm'
 import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from '@material-ui/core'
 import {Menu} from '@material-ui/icons'
-import {TaskPriorities, TaskStatuses, TaskType} from './api/todolists-api'
+import {TaskPriorities, TaskStatuses, TaskType} from './API/todolist-api'
 import {FilterValuesType, TodolistDomainType} from './state/todolists-reducer'
 
 

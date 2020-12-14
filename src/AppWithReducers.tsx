@@ -52,8 +52,8 @@ function AppWithReducers() {
     }
 
     function addTask(title: string, todolistId: string) {
-        const action = addTaskAC(title, todolistId);
-        dispatchToTasks(action);
+        /*const action = addTaskAC(title, todolistId);
+        dispatchToTasks(action);*/
     }
 
     function changeStatus(id: string, status: TaskStatuses, todolistId: string) {
