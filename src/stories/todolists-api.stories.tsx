@@ -165,7 +165,7 @@ export const UpdateTaskTitle = () => {
         deadline: "2020-12-14T06:29:43.143"
     }
 
-    const ChangeTitle = () => todolistAPI.updateTaskTitle(todolistId, taskId, newTask)
+    const ChangeTitle = () => todolistAPI.updateTask(todolistId, taskId, newTask)
         .then((res) => {
             setState(res.data)
         })

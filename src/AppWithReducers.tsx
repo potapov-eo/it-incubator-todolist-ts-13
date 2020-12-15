@@ -83,9 +83,9 @@ function AppWithReducers() {
     }
 
     function addTodolist(title: string) {
-        const action = addTodolistAC(title);
+        /*const action = addTodolistAC(title,"111");
         dispatchToTasks(action);
-        dispatchToTodolists(action);
+        dispatchToTodolists(action);*/
     }
 
     return (
