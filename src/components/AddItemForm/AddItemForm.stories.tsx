@@ -8,7 +8,7 @@ export default {
 }
 
 export const AddItemFormBaseExample = (props: any) => {
-    return (<AddItemForm
+    return (<AddItemForm disabled={props.disabled}
         addItem={action('Button inside form clicked')}
     />)
 }
