@@ -2,6 +2,7 @@ import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {Task} from './Task'
 import {TaskPriorities, TaskStatuses} from '../../../../api/todolists-api'
+import {RequestStatusType} from "../../../../app/App-reducer";
 
 export default {
     title: 'Task Stories',
@@ -22,6 +23,8 @@ export const TaskBaseExample = (props: any) => {
                 changeTaskTitle={changeTitleCallback}
                 changeTaskStatus={changeStatusCallback}
                 todolistId={"todolistId1"}
+                entityStatusTodo="loading"
+
             />
             <Task
                 task={{id: '2', status: TaskStatuses.New, title: "JS", todoListId: "todolistId1", description: '',
@@ -30,6 +33,7 @@ export const TaskBaseExample = (props: any) => {
                 changeTaskTitle={changeTitleCallback}
                 changeTaskStatus={changeStatusCallback}
                 todolistId={"todolistId2"}
+                entityStatusTodo="loading"
             />
         </div>)
 }

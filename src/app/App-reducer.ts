@@ -2,7 +2,7 @@
 
 export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
 
-type InitialStateType = {
+export type InitialStateType = {
     // происходит ли сейчас взаимодействие с сервером
     error:string|null
     status: RequestStatusType

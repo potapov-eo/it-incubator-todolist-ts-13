@@ -3,8 +3,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert, {AlertProps} from '@material-ui/lab/Alert';
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../app/store";
-import {setAppErrorAC, setAppStatusAC} from "../../app/App-reducer";
-
+import {setAppErrorAC} from "../../app/App-reducer";
 
 
 function Alert(props: AlertProps) {
